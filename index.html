@@ -1,1 +1,335 @@
-Coming soon
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kylie Cannon | Enablement and change management</title>
+<meta name="description" content="Kylie Cannon turns complex change into clear plans and ready teams. Enablement, change management, onboarding programs and AI workflows.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=League+Spartan:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  /* ---- Brand tokens (color palette reference sheet) ---- */
+  :root {
+    --dark-green: #162e01;
+    --cream: #fffaf6;
+    --olive: #495c38;
+    --sage: #c4d0b9;
+    --burnt-orange: #a9481c;
+    --mustard: #d7ae2f;
+    --deep-teal: #1b5e5a;
+    --gray-200: #d3d0c3;
+    --gray-400: #8c8a7a;
+    --gray-700: #57554a;
+    --gray-800: #3a3a30;
+    --heading: "League Spartan", system-ui, sans-serif;
+    --body: "DM Sans", system-ui, sans-serif;
+    --wrap: 1120px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+  body { margin: 0; background: var(--cream); color: var(--dark-green); font-family: var(--body); font-size: 18px; line-height: 1.6; }
+
+  /* ---- Typography ---- */
+  h1, h2, h3, h4 { font-family: var(--heading); margin: 0; }
+  h1 { font-size: 48px; font-weight: 700; line-height: 1.1; }
+  h2 { font-size: 36px; font-weight: 700; line-height: 1.15; }
+  h3 { font-size: 28px; font-weight: 600; line-height: 1.2; }
+  h4 { font-size: 22px; font-weight: 600; line-height: 1.25; }
+  .eyebrow { font-family: var(--heading); font-size: 14px; font-weight: 600; line-height: 1.4; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 12px; }
+  p { margin: 0 0 16px; }
+  .caption { font-size: 14px; line-height: 1.5; }
+
+  /* ---- Layout ---- */
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 32px; }
+  section { padding: 96px 0; position: relative; }
+  .section-head { max-width: 680px; margin-bottom: 48px; }
+  .section-head h2 { margin-bottom: 16px; }
+
+  /* ---- Links and buttons ---- */
+  a { color: var(--deep-teal); text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible, .btn:focus-visible, .card:focus-within { outline: 3px solid currentColor; outline-offset: 3px; }
+  .btn { display: inline-block; font-family: var(--body); font-size: 19px; font-weight: 700; line-height: 1; padding: 18px 28px; border-radius: 4px; text-decoration: none; }
+  .btn-primary { background: var(--burnt-orange); color: var(--cream); }
+  .btn-secondary { background: var(--deep-teal); color: var(--cream); }
+  .btn-light { background: var(--cream); color: var(--deep-teal); }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
+
+  /* ---- Sticky header ---- */
+  .site-header { position: sticky; top: 0; z-index: 10; background: var(--cream); border-bottom: 1px solid var(--gray-200); }
+  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 72px; }
+  .logo { font-family: var(--heading); font-weight: 700; font-size: 22px; color: var(--dark-green); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+  .logo-mark { width: 14px; height: 14px; border-radius: 50%; background: var(--burnt-orange); }
+  .site-nav { display: flex; align-items: center; gap: 28px; }
+  .site-nav a:not(.btn) { color: var(--dark-green); font-weight: 500; }
+  .site-nav .btn { font-size: 19px; padding: 14px 22px; }
+
+  /* ---- 1. Hero (cream) ---- */
+  .hero { padding: 96px 0 96px; }
+  .hero { overflow: hidden; }
+  .hero .text { position: relative; z-index: 1; max-width: 620px; }
+  .hero .arch { position: absolute; z-index: 0; right: 4%; bottom: 48px; width: min(520px, 70vw); }
+  .hero .sun { position: absolute; z-index: 0; top: -70px; right: -80px; width: 140px; height: 140px; border-radius: 50%; background: var(--burnt-orange); }
+  .hero h1 { margin-bottom: 20px; }
+  .hero .lede { max-width: 560px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0; }
+  .tag { font-size: 14px; line-height: 1.5; font-weight: 500; padding: 6px 14px; border-radius: 999px; }
+  .hero .tag { border: 2px solid var(--gray-400); background: var(--cream); color: var(--dark-green); }
+  .open-to { margin-top: 28px; }
+  .open-to .caption { color: var(--gray-800); margin: 0 0 10px; }
+  .art svg { display: block; width: 100%; height: auto; }
+
+
+
+  /* ---- 1b. Paths (cream) ---- */
+  .paths { padding: 72px 0 96px; }
+  .path-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .path { position: relative; border: 2px solid var(--gray-200); border-radius: 4px; padding: 32px; display: flex; flex-direction: column; background: var(--cream); }
+  .path:hover { border-color: var(--gray-400); }
+  .path .mark { display: block; width: 48px; height: 48px; margin-bottom: 24px; }
+  .path h3 { margin-bottom: 12px; }
+  .path .desc { flex-grow: 1; }
+  .path .proof-line { font-size: 16px; color: var(--gray-700); border-top: 2px solid var(--gray-200); padding-top: 16px; margin-bottom: 20px; }
+  .path a.stretch { font-weight: 700; }
+  .path a.stretch::after { content: ""; position: absolute; inset: 0; }
+
+  /* ---- 2. Proof strip (olive) ---- */
+  .proof { background: var(--olive); color: var(--cream); padding: 56px 0; }
+  .proof ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+  .proof li { position: relative; padding-top: 28px; }
+  .proof li::before { content: ""; position: absolute; top: 0; left: 0; width: 14px; height: 14px; border-radius: 50%; background: var(--mustard); }
+  .proof .big { font-family: var(--heading); font-size: 48px; font-weight: 700; line-height: 1.1; display: block; margin-bottom: 8px; }
+  .proof .label { display: block; }
+
+  /* ---- 3. Career timeline (cream) ---- */
+  .timeline { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; position: relative; }
+  .timeline::before { content: ""; position: absolute; top: 15px; left: 16px; right: 16px; height: 2px; background: var(--dark-green); }
+  .timeline li { position: relative; padding-top: 56px; }
+  .timeline .dot { position: absolute; top: 0; left: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--dark-green); border: 6px solid var(--cream); box-shadow: none; }
+  .timeline li:last-child .dot { background: var(--burnt-orange); }
+  .timeline h4 { margin-bottom: 8px; }
+  .timeline .caption { color: var(--gray-700); margin: 0; }
+
+  /* ---- 4. Case studies (sage) ---- */
+  .summary { background: var(--sage); }
+  .summary .section-head p { color: var(--gray-800); }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card { background: var(--cream); padding: 32px; border-radius: 4px; display: flex; flex-direction: column; position: relative; }
+  .card .eyebrow { color: var(--gray-700); }
+  .card .stat { font-family: var(--heading); font-size: 48px; font-weight: 700; line-height: 1.1; margin-bottom: 16px; }
+  .card .desc { flex-grow: 1; }
+  .card .caption { color: var(--gray-700); }
+  .card .tags { margin: 8px 0 24px; }
+  .card .tag { background: var(--sage); color: var(--dark-green); }
+  .card a.stretch { font-weight: 700; }
+  .card a.stretch::after { content: ""; position: absolute; inset: 0; }
+  .card:hover a.stretch { text-decoration-thickness: 2px; }
+
+  /* ---- 5. Testimonial (deep teal) ---- */
+  .quote { background: var(--deep-teal); color: var(--cream); }
+  .quote .layout { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 56px; align-items: center; }
+  .quote blockquote { margin: 0; }
+  .quote blockquote p { font-family: var(--heading); font-size: 36px; font-weight: 700; line-height: 1.15; margin-bottom: 24px; }
+  .quote cite { font-style: normal; }
+
+  /* ---- 6. AI (cream) ---- */
+  .ai .layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .ai h2 { margin-bottom: 16px; }
+  .steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 24px; }
+  .steps li { display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: center; }
+  .num { width: 56px; height: 56px; border-radius: 50%; background: var(--deep-teal); color: var(--cream); font-family: var(--heading); font-size: 24px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+
+  /* ---- 7. Connect (olive) ---- */
+  .connect { background: var(--olive); color: var(--cream); overflow: hidden; }
+  .connect .layout { display: grid; grid-template-columns: minmax(0, 640px) minmax(0, 1fr); gap: 64px; align-items: center; }
+  .connect h2 { margin-bottom: 16px; }
+  .connect a:not(.btn) { color: var(--cream); }
+  .connect .art svg { max-width: 240px; margin-left: auto; }
+
+  .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  footer { padding: 32px 0; }
+  footer p { margin: 0; color: var(--gray-700); }
+
+  /* ---- Smaller screens ---- */
+  @media (max-width: 960px) {
+    .path-grid, .hero .layout, .ai .layout, .connect .layout, .cards { grid-template-columns: 1fr; }
+    .connect .art { display: none; }
+
+    .proof ul { grid-template-columns: repeat(2, 1fr); }
+    .timeline { grid-template-columns: 1fr; gap: 28px; }
+    .timeline::before { top: 16px; bottom: 16px; left: 15px; right: auto; width: 2px; height: auto; }
+    .timeline li { padding: 0 0 0 56px; }
+    .quote .layout { grid-template-columns: 1fr; gap: 24px; }
+    .quote .art svg { max-width: 80px; }
+  }
+  @media (max-width: 640px) {
+    section { padding: 64px 0; }
+    .wrap { padding: 0 20px; }
+    h1 { font-size: 40px; }
+    h2, .quote blockquote p { font-size: 30px; }
+    .card .stat, .proof .big { font-size: 40px; }
+    .proof ul { grid-template-columns: 1fr; }
+    .site-nav a:not(.btn) { display: none; }
+
+  }
+
+  /* ---- Option B color rhythm ---- */
+  .paths { background: var(--sage); }
+  .paths .path { border-color: var(--cream); }
+  .paths .path:hover { border-color: var(--gray-400); }
+  .timeline-sec { background: var(--olive); color: var(--cream); }
+  .timeline-sec .eyebrow { color: var(--cream) !important; }
+  .timeline-sec .timeline::before { background: var(--cream); }
+  .timeline-sec .timeline .dot { background: var(--cream); border-color: var(--olive); }
+  .timeline-sec .timeline li:last-child .dot { background: var(--mustard); }
+  .timeline-sec .timeline .caption { color: var(--cream); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="./"><span class="logo-mark" aria-hidden="true"></span>Kylie Cannon</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#paths">Work</a>
+      <a href="https://sites.google.com/view/kylie-cannon/ai-spotlight">AI spotlight</a>
+      <a href="mailto:kylie.cannon.co@gmail.com">Email</a>
+      <a class="btn btn-primary" href="https://drive.google.com/file/d/1vwVWTAD8m_FWe_J-btfRCino6f-7p7Vy/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1. HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <span class="sun" aria-hidden="true"></span>
+    <svg class="arch" viewBox="0 0 520 330" aria-hidden="true"><path d="M60 330 V190 A150 150 0 0 1 460 190 V330 Z" fill="#c4d0b9"/></svg>
+    <div class="wrap layout">
+      <div class="text">
+        <p class="eyebrow" style="color: var(--gray-800)">Enablement · Change · Customer engagement</p>
+        <h1 id="hero-title">I turn complex change into clear plans and ready teams</h1>
+        <p class="lede">I lead cross-functional enablement and change work from discovery through rollout and evaluation.</p>
+        <p class="caption" style="color: var(--gray-800); margin: 0">Based in Arvada, CO · Open to Denver metro, hybrid or remote</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#paths">Find your fit</a>
+          <a class="btn btn-secondary" href="https://drive.google.com/file/d/1vwVWTAD8m_FWe_J-btfRCino6f-7p7Vy/view?usp=sharing" target="_blank" rel="noopener">View my resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 1b. PATHS -->
+  <section class="paths" id="paths" aria-labelledby="paths-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color: var(--gray-800)">Hiring for one of these?</p>
+        <h2 id="paths-title">Start with the role you're filling</h2>
+      </div>
+      <div class="path-grid">
+        <article class="path" style="border-top: 6px solid #1b5e5a">
+          <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#1b5e5a"/></svg>
+          <h3>Enablement program management</h3>
+          <p class="desc">I take enablement programs from request to launch: scoping, planning, designing the training and coordinating the teams who deliver it.</p>
+          <p class="proof-line">4 onboarding programs into 1, with 100% new-hire retention</p>
+          <a class="stretch" href="https://sites.google.com/view/kylie-cannon/how-i-work/care-new-hire-program">See the onboarding case study</a>
+        </article>
+        <article class="path" style="border-top: 6px solid #a9481c">
+          <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M0 40 A24 24 0 0 1 48 40 Z" fill="#a9481c"/></svg>
+          <h3>Change management and readiness</h3>
+          <p class="desc">I get teams ready for new processes, tools and systems, from communication and training to reinforcement after go-live.</p>
+          <p class="proof-line">100% completion across 110 BPO agents in a knowledge base adoption push</p>
+          <a class="stretch" href="https://sites.google.com/view/kylie-cannon/how-i-work/knowledge-base-adoption">See the knowledge base case study</a>
+        </article>
+        <article class="path" style="border-top: 6px solid #495c38">
+          <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M0 48 V0 A48 48 0 0 1 48 48 Z" fill="#495c38"/></svg>
+          <h3>Engagement management</h3>
+          <p class="desc">I help customers get started and stay, especially in the trades and home services.</p>
+          <p class="proof-line">Built the customer onboarding playbooks, resources and scripting</p>
+          <a class="stretch" href="https://sites.google.com/view/kylie-cannon/how-i-work/activations-operational-readiness-change-enablement">See the customer activation case study</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. CAREER TIMELINE -->
+  <section class="timeline-sec" aria-labelledby="path-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color: var(--gray-700)">Career path</p>
+        <h2 id="path-title">How I got here</h2>
+      </div>
+      <ol class="timeline">
+        <li><span class="dot" aria-hidden="true"></span><h4>Sales</h4><p class="caption">Sold to home service pros and learned what they need to succeed</p></li>
+        <li><span class="dot" aria-hidden="true"></span><h4>Retention and upselling</h4><p class="caption">Kept pros on board and grew their accounts</p></li>
+        <li><span class="dot" aria-hidden="true"></span><h4>Customer onboarding</h4><p class="caption">Helped pilot and build the team from scratch</p></li>
+        <li><span class="dot" aria-hidden="true"></span><h4>Training and program delivery</h4><p class="caption">Trained internal and offshore BPO teams through change</p></li>
+        <li><span class="dot" aria-hidden="true"></span><h4>Program Delivery Strategist</h4><p class="caption">Led program delivery for operations enablement</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 5. TESTIMONIAL -->
+  <section class="quote" aria-label="Testimonial">
+    <div class="wrap layout">
+      <div class="art" aria-hidden="true">
+        <svg viewBox="0 0 160 160"><circle cx="80" cy="80" r="80" fill="#c4d0b9"/></svg>
+      </div>
+      <figure style="margin:0">
+        <blockquote>
+          <p>“She found the gaps no one else addressed and called out where we weren't setting teams up to actually perform.”</p>
+        </blockquote>
+        <figcaption><cite>Rebekah Albright, former VP, Operations Performance &amp; Learning, Angi</cite></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 6. AI -->
+  <section class="ai" aria-labelledby="ai-title">
+    <div class="wrap layout">
+      <div>
+        <p class="eyebrow" style="color: var(--gray-700)">AI workflows</p>
+        <h2 id="ai-title">See how I build with AI</h2>
+        <p>I built a reusable Claude Skill that turns training launch requirements into a communication plan and audience-specific drafts.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="https://sites.google.com/view/kylie-cannon/ai-spotlight">Try the demo</a>
+        </div>
+      </div>
+      <ol class="steps">
+        <li><span class="num" aria-hidden="true">1</span><h4>Define the planning logic</h4></li>
+        <li><span class="num" aria-hidden="true">2</span><h4>Package it into reusable instructions</h4></li>
+        <li><span class="num" aria-hidden="true">3</span><h4>Review every output before use</h4></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 7. CONNECT -->
+  <section class="connect" aria-labelledby="connect-title">
+    <div class="wrap layout">
+      <div>
+        <p class="eyebrow">Let's connect</p>
+        <h2 id="connect-title">Have a role in mind? Let's talk.</h2>
+        <p>I'm open to conversations about enablement program management, change management and customer engagement roles. Email me at <a href="mailto:kylie.cannon.co@gmail.com">kylie.cannon.co@gmail.com</a>.</p>
+        <div class="btn-row">
+          <a class="btn btn-light" href="https://www.linkedin.com/in/kylie-cannon-62a3a465/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        </div>
+      </div>
+      <div class="art" aria-hidden="true">
+        <svg viewBox="0 0 240 240">
+          <circle cx="120" cy="120" r="110" fill="#d7ae2f"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap"><p class="caption">© 2026 Kylie Cannon · Based in Arvada, CO · Open to Denver metro, hybrid or remote</p></div>
+</footer>
+
+</body>
+</html>
